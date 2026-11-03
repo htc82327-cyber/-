@@ -1,0 +1,3 @@
+Загрузите СОДЕРЖИМОЕ папки PeyVoduAndroidV1 в корень репозитория.
+В .github/workflows должен остаться только build.yml.
+В GitHub Actions запускайте workflow: Build PeyVodu APK.
