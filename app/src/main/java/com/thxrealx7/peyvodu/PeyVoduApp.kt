@@ -402,11 +402,17 @@ private fun SettingsScreen(state: AppState, vm: PeyVoduViewModel) {
         GlassCard {
             Text("Напоминания", fontSize = 19.sp, fontWeight = FontWeight.Bold)
             SettingRow("Напоминания", "Локально, без интернета") {
-                Switch(state.remindersEnabled) { vm.setReminders(it) }
+                Switch(
+                    checked = state.remindersEnabled,
+                    onCheckedChange = { checked -> vm.setReminders(checked) }
+                )
             }
             HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = .55f))
             SettingRow("Голосовые фразы", "Отдельно от звука системного уведомления") {
-                Switch(state.voiceRemindersEnabled) { vm.setVoiceReminders(it) }
+                Switch(
+                    checked = state.voiceRemindersEnabled,
+                    onCheckedChange = { checked -> vm.setVoiceReminders(checked) }
+                )
             }
             HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = .55f))
             Text("Интервал", fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(top = 12.dp, bottom = 8.dp))
